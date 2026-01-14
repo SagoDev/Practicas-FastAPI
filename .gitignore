@@ -1,0 +1,23 @@
+#test 
+
+# Archivos de compilación y empaquetado
+build/
+dist/
+*.egg-info/
+
+# Entorno virtual
+venv/
+.env/
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Archivos temporales de IDE
+.vscode/
+.idea/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
