@@ -1,0 +1,13 @@
+Plan de Prácticas FastAPI
+
+Fuente de datos externa: https://jsonplaceholder.typicode.com
+
+
+Resultado esperado al finalizar el plan:
+- Al terminar estos ejercicios, sabrás:
+- Consumir APIs externas correctamente
+- Diseñar endpoints REST profesionales
+- Validar y transformar datos
+- Manejar errores reales
+- Estructurar proyectos FastAPI
+- Prepararte para bases de datos reales
