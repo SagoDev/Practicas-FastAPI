@@ -1,0 +1,51 @@
+NIVEL 1 — Básico
+
+Objetivo: Entender cómo consumir una API externa y exponerla desde FastAPI.
+
+EJERCICIO 1: Obtener lista de usuarios
+
+Endpoint: GET /users
+
+Descripción:
+Consume https://jsonplaceholder.typicode.com/users y devuelve la lista completa.
+
+Conceptos clave:
+- httpx.AsyncClient
+- Endpoints GET
+- JSON passthrough
+
+Ayuda:
+No transformes los datos. Devuelve exactamente lo que recibes.
+
+EJERCICIO 2: Obtener un usuario por ID
+
+Endpoint: GET /users/{user_id}
+
+Descripción:
+Obtiene un usuario específico desde la API externa usando el user_id.
+ 
+Conceptos clave:
+
+- Path parameters
+- F-strings en URLs externas
+- Manejo de errores básicos
+
+Ayuda:
+Si la API externa responde 404, tu API debe reflejarlo correctamente.
+
+Ejercicio 3: Filtrar campos del usuario
+
+Endpoint: GET /users/{user_id}/basic
+
+Descripción:
+Devuelve solo:
+- id
+- name
+- email
+
+Conceptos clave:
+- Manipulación de diccionarios
+- Control de respuesta
+
+Ayuda:
+No modifiques la API externa, transforma la respuesta en tu backend.

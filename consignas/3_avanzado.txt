@@ -1,0 +1,64 @@
+
+
+NIVEL 3 — Avanzado
+
+Objetivo: Diseñar una API limpia y con estructura profesional.
+
+EJERCICIO 7: Arquitectura por capas
+
+Descripción:
+Reestructura el proyecto en:
+
+app/
+├── main.py
+├── routers/
+│   └── users.py
+├── services/
+│   └── jsonplaceholder.py
+├── schemas/
+│   └── user.py
+
+
+Conceptos clave:
+- Separación de responsabilidades
+- Reutilización de lógica
+- Escalabilidad
+
+Ayuda:
+Los routers no deben conocer URLs externas.
+
+EJERCICIO 8: Endpoint agregado (DTO)
+
+Endpoint: GET /users/{user_id}/profile
+
+Descripción:
+Combina:
+- Datos del usuario
+- Cantidad de posts
+- Cantidad de albums
+
+Fuentes externas:
+- /users/{id}
+- /posts?userId={id}
+- /albums?userId={id}
+
+Conceptos clave:
+- Múltiples llamadas async
+- Agregación de datos
+- Diseño de respuesta propia
+
+Ayuda:
+Tu API ya no es un proxy, es un servicio.
+
+EJERCICIO 9: Cache simple en memoria
+
+Descripción:
+Cachea la respuesta de usuarios por 60 segundos.
+
+Conceptos clave:
+- Diccionarios en memoria
+- Timestamp
+- Optimización
+
+Ayuda:
+No uses Redis todavía; esto es conceptual.
