@@ -1,0 +1,53 @@
+
+NIVEL 2 — Intermedio
+
+Objetivo: Validar, transformar y organizar mejor el código.
+
+EJERCICIO 4: Usar Pydantic para modelar usuarios
+
+Endpoint: GET /users/{user_id}
+
+Descripción:
+Define un modelo Pydantic User y valida la respuesta externa antes de devolverla.
+
+Conceptos clave:
+- BaseModel
+- Validación de datos externos
+- Tipado fuerte
+
+Ayuda:
+No todos los campos son obligatorios; usa Optional.
+
+EJERCICIO 5: Listar posts de un usuario
+
+Endpoint: GET /users/{user_id}/posts
+
+Fuente externa:
+https://jsonplaceholder.typicode.com/posts?userId={user_id}
+
+Descripción:
+Devuelve los posts asociados a un usuario.
+
+Conceptos clave:
+- Query parameters externos
+- Relación entre recursos
+- Reuso de cliente HTTP
+
+Ayuda:
+Verifica que el usuario exista antes de buscar sus posts.
+
+Ejercicio 6: Manejo de errores externos
+
+Descripción:
+Centraliza el manejo de errores cuando:
+- La API externa no responde
+- Timeout
+- Código ≠ 200
+
+Conceptos clave:
+- try/except
+- HTTPException
+- Código 502 (Bad Gateway)
+
+Ayuda:
+Tu API debe ser más confiable que la externa.
