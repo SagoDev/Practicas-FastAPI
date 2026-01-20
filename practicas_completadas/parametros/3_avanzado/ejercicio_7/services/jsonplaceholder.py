@@ -1,0 +1,49 @@
+"""Services"""
+
+from fastapi import HTTPException
+import httpx
+
+BASE_URL = "https://jsonplaceholder.typicode.com"
+
+
+async def fetch_user(user_id: int) -> dict:
+    """Fetch URL."""
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.get(f"{BASE_URL}/users/{user_id}")
+
+        if response.status_code == 404:
+            raise HTTPException(status_code=404, detail="Usuario no encotrado.")
+        response.raise_for_status()
+        return response.json()
+    except httpx.TimeoutException as timeout_exc:
+        raise HTTPException(
+            status_code=504, detail="Servicio externo no responde."
+        ) from timeout_exc
+
+    except httpx.RequestError as req_exc:
+        raise HTTPException(
+            status_code=502, detail="Servicio externo no disponible."
+        ) from req_exc
+
+
+async def fetch_user_posts(user_id: int):
+    """Fetch user posts"""
+    try:
+        async with httpx.AsyncClient(timeout=5) as client:
+            response = await client.get(
+                f"{BASE_URL}/posts", params={"user_id": user_id}
+            )
+
+            response.raise_for_status()
+            return response.json()
+
+    except httpx.TimeoutException as timeout_exc:
+        raise HTTPException(
+            status_code=504, detail="Servicio externo no responde."
+        ) from timeout_exc
+
+    except httpx.RequestError as req_exc:
+        raise HTTPException(
+            status_code=502, detail="Servicio externo no disponible."
+        ) from req_exc
